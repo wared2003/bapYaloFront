@@ -1,3 +1,173 @@
+
+/* reset */
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 8px;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html{
+  font-size: 8px;
+}
+body{
+  font-size: 8px;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+
+/*********************************** var ********************************/
+
+$font-inter: 'Inter', sans-serif;
+
+
+$white: #ffffff;
+$gold: #E2AC6C;
+$mediumBlue: #2C4065;
+$darkBlue: #122040;
+
+
+$fw-Regular: 400;
+$fw-semiBold: 600;
+
+
+/*********************************general********************************/
+body{
+  background-color: $mediumBlue;
+}
+
+
+/*********************************** nav ********************************/
+.navbar{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  font-family: $font-inter;
+  padding-top: 4rem;
+  padding-left: 4rem;
+  img{
+    height: 68px;
+  }
+  .nav-links{
+    position: relative;
+    right: 32px;
+    padding-top: 25px;
+    column-gap: 140px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+
+    a{
+      font-size: 2.5rem;
+      font-weight: $fw-Regular;
+      color: $white;
+    }
+    a.active{
+      color: $gold;
+    }
+  }
+}
+
+
+/**********************************hero banner********************************/
+
+.heroBanner{
+  margin-top: 25rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+
+  img{
+    width: 390px;
+    height: 338px;
+  }
+
+  .hero-text{
+    font-family: $font-inter;
+    width: 40%;
+    h1{
+
+      font-weight: 600;
+      font-size: 6rem;
+      color: $white;
+    }
+    & > p{
+      font-size: 2rem;
+      font-weight: $fw-Regular  ;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      color: $white;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20rem;
+      height: 7rem;
+      background-color:  $gold;
+      color: $white;
+      font-size: 2.5rem;
+    }
+  }
+}
+/*********************************** about ********************************/
+.about{
+  background-image: url("../assets/graphics/courbe1.png");
+  width: 100%;
+  height: 1076px;
+  background-size: cover;
+}
+
+
+
+
+
+/*********************************** caroussel ********************************/
 .gallery {
   width: 100%;
   position: relative;
@@ -73,7 +243,7 @@
 .gallery-controls button {
   border: 0;
   background:none;
-  font-size: 60px;
+  font-size: 6rem;
   cursor: pointer;
   margin: 0 20px;
   padding: 0 12px;
@@ -154,3 +324,4 @@
   width: 35px;
   transition: all 0.5s;
 }
+
