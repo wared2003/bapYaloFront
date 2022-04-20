@@ -68,11 +68,52 @@ body {
   background-color: #2C4065;
 }
 
+h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+
+* {
+  color: #ffffff;
+}
+
+input {
+  border: none;
+  color: #122040;
+}
+input:focus {
+  outline: none;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25rem;
+  height: 8rem;
+  background-color: #E2AC6C;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 2rem;
+  font-size: 3rem;
+}
+.button > p {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
 /*********************************** nav ********************************/
 .navbar {
   display: flex;
   flex-wrap: nowrap;
-  width: 100%;
   font-family: "Inter", sans-serif;
   padding-top: 4rem;
   padding-left: 4rem;
@@ -106,10 +147,6 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-.heroBanner img {
-  width: 390px;
-  height: 338px;
-}
 .heroBanner .hero-text {
   font-family: "Inter", sans-serif;
   width: 40%;
@@ -126,16 +163,6 @@ body {
   margin-bottom: 4rem;
   color: #ffffff;
 }
-.heroBanner .hero-text .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20rem;
-  height: 7rem;
-  background-color: #E2AC6C;
-  color: #ffffff;
-  font-size: 2.5rem;
-}
 
 /*********************************** about ********************************/
 .about {
@@ -143,6 +170,91 @@ body {
   width: 100%;
   height: 1076px;
   background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 30rem;
+  max-height: 600px;
+}
+.about .about-content {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.about .about-content .about-text {
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+}
+.about .about-content .about-text h2 {
+  margin-bottom: 10rem;
+}
+.about .about-content .about-text h5 {
+  font-weight: 600;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+/************************************* valeurs *************************************/
+.valeurs h2 {
+  text-align: center;
+  margin-top: 24rem;
+  margin-bottom: 11rem;
+}
+.valeurs .cards {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.valeurs .cards .card {
+  width: 390px;
+}
+.valeurs .cards .card h5 {
+  font-family: "Inter", sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 9rem;
+  margin-bottom: 4rem;
+}
+
+/****************  newslatter  subscribe form *********************************/
+.newslatter h2 {
+  margin-top: 22rem;
+  margin-bottom: 12rem;
+  text-align: center;
+}
+.newslatter form > div {
+  display: flex;
+  justify-content: center;
+}
+.newslatter form .email {
+  position: relative;
+  left: 2rem;
+  border: none;
+  height: 7.8rem;
+  width: 645px;
+  border-radius: 2rem;
+  font-size: 3rem;
+  padding-left: 3rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: #7A7A7A;
+}
+.newslatter form .email::placeholder {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: #7A7A7A;
+  opacity: 75%;
+}
+.newslatter form .newslatter-btn {
+  position: relative;
+  right: 2rem;
+}
+.newslatter form .rgpd-newslatter label {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 2rem;
+  text-align: center;
 }
 
 /*********************************** caroussel ********************************/
@@ -290,14 +402,14 @@ body {
 
 .gallery-nav li {
   background: #ccc;
-  border-radius: 50%;
-  height: 10px;
+  border-radius: 15px;
+  height: 6px;
   margin: 0 4px;
-  width: 10px;
+  width: 20px;
 }
 
 .gallery-nav li.gallery-item-selected {
-  background: #555;
+  background: #E2AC6C;
   border-radius: 15px;
   width: 35px;
   transition: all 0.5s;

@@ -23,6 +23,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+
 html{
   font-size: 8px;
 }
@@ -68,7 +69,7 @@ $white: #ffffff;
 $gold: #E2AC6C;
 $mediumBlue: #2C4065;
 $darkBlue: #122040;
-
+$txt-grey: #7A7A7A;
 
 $fw-Regular: 400;
 $fw-semiBold: 600;
@@ -79,12 +80,54 @@ body{
   background-color: $mediumBlue;
 }
 
+h2{
+  font-family: $font-inter;
+  font-size: 5rem;
+  font-weight: $fw-semiBold;
+}
+
+p{
+  font-size: 2rem;
+  font-weight: $fw-Regular;
+  font-family: $font-inter;
+}
+
+*{
+  color: $white;
+}
+
+
+input{
+  border: none;
+  color: $darkBlue;
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25rem;
+  height: 8rem;
+  background-color:  $gold;
+  color: $white;
+  font-weight: $fw-semiBold;
+  border-radius: 2rem;
+  font-size: 3rem;
+
+  & > p{
+    color: $white;
+    font-weight: $fw-semiBold;
+    font-size: 3rem;
+  }
+}
 
 /*********************************** nav ********************************/
 .navbar{
   display: flex;
   flex-wrap: nowrap;
-  width: 100%;
   font-family: $font-inter;
   padding-top: 4rem;
   padding-left: 4rem;
@@ -121,10 +164,6 @@ body{
   display: flex;
   justify-content: space-evenly;
 
-  img{
-    width: 390px;
-    height: 338px;
-  }
 
   .hero-text{
     font-family: $font-inter;
@@ -142,17 +181,6 @@ body{
       margin-bottom: 4rem;
       color: $white;
     }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 20rem;
-      height: 7rem;
-      background-color:  $gold;
-      color: $white;
-      font-size: 2.5rem;
-    }
   }
 }
 /*********************************** about ********************************/
@@ -161,8 +189,121 @@ body{
   width: 100%;
   height: 1076px;
   background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 30rem;
+  max-height: 600px;
+
+  .about-content{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .about-text {
+      font-family: $font-inter;
+      color: $white;
+
+      h2{
+        margin-bottom: 10rem;
+      }
+
+      h5{
+        font-weight: $fw-semiBold;
+        font-size: 3rem;
+        margin-bottom: 4rem;
+      }
+
+    }
+  }
 }
 
+
+/************************************* valeurs *************************************/
+
+.valeurs{
+
+  h2{
+    text-align: center;
+    margin-top: 24rem;
+    margin-bottom: 11rem;
+  }
+
+  .cards{
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    .card{
+      width: 390px;
+
+      h5{
+        font-family: $font-inter;
+        font-size: 3rem;
+        font-weight: $fw-semiBold;
+        margin-top: 9rem;
+        margin-bottom: 4rem;
+
+      }
+    }
+  }
+}
+
+/****************  newslatter  subscribe form *********************************/
+
+.newslatter{
+  h2{
+    margin-top: 22rem;
+    margin-bottom: 12rem;
+    text-align: center;
+
+  }
+  form{
+    & > div{
+      display: flex;
+      justify-content: center;
+    }
+    .email{
+      position: relative;
+      left: 2rem;
+      border: none;
+      height: 7.8rem;
+      width: 645px;
+      border-radius: 2rem;
+      font-size: 3rem;
+      padding-left: 3rem;
+      font-weight: $fw-Regular;
+      font-family: $font-inter;
+      color: $txt-grey;
+
+
+    }
+    .email::placeholder{
+      font-weight: $fw-Regular;
+      font-family: $font-inter;
+      color: $txt-grey;
+      opacity: 75%;
+    }
+    .newslatter-btn{
+      position: relative;
+      right: 2rem;
+    }
+
+    .rgpd-newslatter{
+
+      label{
+        font-weight: $fw-Regular;
+        font-family: $font-inter;
+        color: $white;
+        font-size: 2rem;
+        text-align: center;
+      }
+
+
+        
+    }
+  }
+}
 
 
 
@@ -312,14 +453,14 @@ body{
 
 .gallery-nav li {
   background: #ccc;
-  border-radius: 50%;
-  height: 10px;
+  border-radius: 15px;
+  height: 6px;
   margin: 0 4px;
-  width: 10px;
+  width: 20px;
 }
 
 .gallery-nav li.gallery-item-selected {
-  background: #555;
+  background: $gold;
   border-radius: 15px;
   width: 35px;
   transition: all 0.5s;
