@@ -249,12 +249,75 @@ input:focus {
   position: relative;
   right: 2rem;
 }
-.newslatter form .rgpd-newslatter label {
+.newslatter form .rgpd-check {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+  margin-top: 2rem;
+}
+.newslatter p {
   font-weight: 400;
   font-family: "Inter", sans-serif;
   color: #ffffff;
   font-size: 2rem;
   text-align: center;
+}
+.newslatter .check {
+  cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
+}
+.newslatter .check:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(34, 50, 84, 0.03);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.newslatter .check svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  transform: translate3d(0, 0, 0) scale(1.3);
+  transition: all 0.2s ease;
+}
+.newslatter .check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+.newslatter .check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+.newslatter .check:hover:before {
+  opacity: 1;
+}
+.newslatter .check:hover svg {
+  stroke: #E2AC6C;
+}
+.newslatter #cbx:checked + .check svg {
+  stroke: #E2AC6C;
+}
+.newslatter #cbx:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+.newslatter #cbx:checked + .check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
 }
 
 /*********************************** caroussel ********************************/
