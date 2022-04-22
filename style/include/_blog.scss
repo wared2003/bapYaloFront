@@ -3,6 +3,185 @@
 @import 'variables';
 @import 'button';
 
+/*************************** A La une  ********************************/
+
+
+.hero-Article{
+
+  h2{
+    text-align: left;
+    margin-top: 78px;
+    margin-bottom: 40px;
+
+    @media only screen and (max-width: 1450px){
+      text-align: center;
+
+    }
+  }
+
+  padding: 100px 148px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width: 1450px){
+    justify-content: center;
+    padding: 100px 0;
+  }
+  .content{
+    width: 45%;
+    @media only screen and (max-width: 1450px){
+      text-align: center;
+      width: 85%;
+    }
+
+    h4{
+      font-family: $font-inter;
+      font-style: normal;
+      font-weight:  $fw-semiBold;
+      font-size: 24px;
+      line-height: 29px;
+      color: $white;
+      margin-top: 0;
+      margin-bottom: 32px;
+      @media only screen and (max-width: 1450px){
+        text-align: center;
+
+      }
+    }
+
+    p{
+      font-weight: $fw-Regular;
+      font-family: $font-inter;
+      font-size: 18px;
+      line-height: 22px;
+      margin-top: 0;
+      margin-bottom: 32px;
+
+      @media only screen and (max-width: 1450px){
+       text-align: center;
+
+      }
+    }
+
+    .button{
+      p{
+        font-family: $font-inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        margin: 0;
+      }
+      @media only screen and (max-width: 1450px){
+        margin: 70px auto;
+      }
+    }
+  }
+
+  img{
+    width: 100%;
+  }
+}
+
+/*********************************** articles  *****************************/
+
+.articles-title{
+  font-family: $font-inter;
+  font-weight: $fw-semiBold;
+  font-size: 40px;
+  color: $white;
+  margin-top: 0;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.articles{
+
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 64px;
+  padding: 40px 148px;
+  justify-content: space-evenly;
+
+  @media only screen and (max-width: 880px){
+    padding: 40px 0;
+  }
+
+
+  .article-card{
+    background-color: $white;
+    box-sizing: border-box;
+    position: relative;
+    width: 500px;
+    height: 640px;
+    overflow: hidden;
+
+    @media only screen and (max-width: 580px){
+      width: 95%;
+      box-sizing: border-box;
+      overflow: fragments;
+    }
+
+    img{
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    & > div{
+      width: 100%;
+      height: 194px;
+      background-color: $white;
+      position: absolute;
+      padding: 0 24px;
+      bottom: 0px;
+      left: 0px;
+      z-index: 2;
+
+      @media only screen and (max-width: 880px){
+        box-sizing: border-box;
+        overflow: fragments;
+      }
+
+      color: $darkBlue;
+      h5{
+        color: $darkBlue;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        margin-top: 48px;
+        margin-bottom: 15px;
+
+        @media only screen and (max-width: 7000px){
+         margin-top: 10px;
+        }
+      }
+      p{
+        color: $darkBlue;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 0px;
+      }
+      .date{
+        font-family: $font-inter;
+        color: $darkBlue;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        position: absolute;
+        bottom: 10px;
+        right: 60px;
+      }
+    }
+  }
+}
+
 
 
 
