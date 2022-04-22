@@ -1,78 +1,8 @@
-
-/* reset */
-
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 8px;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-
-html{
-  font-size: 8px;
-}
-body{
-  font-size: 8px;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-a{
-  text-decoration: none;
-  color: black;
-}
-
-
-/*********************************** var ********************************/
-
-$font-inter: 'Inter', sans-serif;
-
-
-$white: #ffffff;
-$gold: #E2AC6C;
-$mediumBlue: #2C4065;
-$darkBlue: #122040;
-$txt-grey: #7A7A7A;
-
-$fw-Regular: 400;
-$fw-semiBold: 600;
+/*************************************import*******************************/
+@import 'include/burger';
+@import 'include/reset';
+@import 'include/variables';
+@import 'include/button';
 
 
 /*********************************general********************************/
@@ -105,26 +35,11 @@ input{
   }
 }
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 25rem;
-  height: 8rem;
-  background-color:  $gold;
-  color: $white;
-  font-weight: $fw-Regular;
-  border-radius: 2rem;
-  font-size: 3rem;
-
-  & > p{
-    color: $white;
-    font-weight: $fw-Regular;
-    font-size: 3rem;
-  }
-}
-
 /*********************************** nav ********************************/
+
+//burger button style in include/_button.scss
+
+
 .navbar{
   display: grid;
   grid-template-columns: 2fr 6fr 2fr;
@@ -132,8 +47,39 @@ input{
   padding-top: 4rem;
   padding-left: 25px;
   padding-right: 25px;
+  transition: all 1s;
+
+  @media only screen and (max-width: 1200px){
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    background-color: $darkBlue;
+    padding-bottom: 6rem;
+    height: 30px;
+  }
+
+  .toggle{
+    display: none;
+    @media only screen and (max-width: 1200px){
+      display: block;
+    }
+
+  }
+
+    img{
+      position: absolute;
+      top: 25px;
+      left: 20px;
+  }
+
   img{
     height: 68px;
+    @media only screen and (max-width: 1200px){
+      display: flex;
+      flex-direction: column;
+    }
   }
   .nav-links{
     text-align: center;
@@ -143,6 +89,12 @@ input{
     display: flex;
     margin-right: auto;
     margin-left: auto;
+    @media only screen and (max-width: 1200px){
+      padding-top: 12rem;
+      row-gap: 6rem;
+      flex-direction: column;
+      transform: translateY(-2000px);
+    }
 
     a{
       font-size: 3rem;
@@ -166,9 +118,24 @@ input{
       color: $gold;
       font-weight: $fw-Regular;
     }
+
+    @media only screen and (max-width: 1200px){
+      margin-left: 0;
+      margin-top: 10rem;
+      transform: translateY(-2000px);
+
+    }
+  }
+
+  .nav-element-translate-in{
+    transform: translateY(0px)!important;
   }
 
 
+}
+
+.nav-translate-in{
+  height: auto !important;
 }
 
 
@@ -182,12 +149,29 @@ input{
   display: flex;
   justify-content: space-evenly;
 
+  @media only screen and (max-width: 1200px){
+    margin-top: 10rem;
+  }
+
+  img{
+    width: 20vw;
+    height: 20vw;
+
+    @media only screen and (max-width: 1200px){
+      display: none;
+    }
+  }
 
   .hero-text{
     font-family: $font-inter;
     width: 40%;
-    h1{
 
+    @media only screen and (max-width: 1200px){
+      width: 80%;
+    }
+
+
+    h1{
       font-weight: 600;
       font-size: 6rem;
       color: $white;
@@ -220,6 +204,26 @@ input{
   padding-top: 30rem;
   max-height: 600px;
 
+  @media only screen and (max-width: 1600px){
+    padding-top: 20rem;
+  }
+  @media only screen and (max-width: 1400px){
+    background-color: $darkBlue;
+    background-image: none;
+    padding-top: 2rem;
+  }
+  @media only screen and (max-width: 1100px){
+    max-height: none;
+    height: auto;
+    padding-bottom: 4rem;
+  }
+
+  img{
+    @media only screen and (max-width: 1200px){
+     max-width: 95%;
+    }
+  }
+
   .about-content{
 
     margin-right: 30rem;
@@ -229,20 +233,39 @@ input{
     justify-content: space-evenly;
     align-items: center;
 
+    @media only screen and (max-width: 1100px){
+      flex-direction: column;
+      text-align: center;
+      margin: 3rem auto;
+    }
+
     .about-text {
       margin-left: 25rem;
       font-family: $font-inter;
       color: $white;
 
+      @media only screen and (max-width: 1100px){
+        margin: 3rem auto;
+        max-width: 80%;
+      }
+
       h2{
         margin-bottom: 10rem;
         text-align: left;
+        @media only screen and (max-width: 1100px){
+          text-align: center;
+          margin-bottom: 4rem;
+          margin-top: 5rem;
+        }
       }
 
       h5{
         font-weight: $fw-semiBold;
         font-size: 3rem;
         margin-bottom: 4rem;
+        @media only screen and (max-width: 1100px){
+          margin-bottom: 6rem;
+        }
       }
 
     }
@@ -265,6 +288,7 @@ input{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    row-gap: 12rem;
 
     .card{
       width: 390px;
@@ -276,7 +300,15 @@ input{
         margin-top: 9rem;
         margin-bottom: 4rem;
 
+        @media only screen and (max-width: 1100px){
+          margin-top: 4rem;
+        }
       }
+
+      @media only screen and (max-width: 1100px){
+        max-width: 90%;
+      }
+
     }
   }
 }
@@ -290,6 +322,19 @@ input{
   display: flex;
   justify-content: center;
   height: 800px;
+  @media only screen and (max-width: 1100px){
+    height: auto;
+
+    .card{
+      height: auto;
+      padding-bottom: 4rem;
+
+      @media only screen and (max-width: 880px) {
+        border-radius: 0;
+      }
+    }
+  }
+
 
   h2{
     margin-top: 10rem;
@@ -303,7 +348,7 @@ input{
     font-weight: $fw-Regular;
     max-width: 70%;
     text-align: center;
-    margin: 80px  auto;
+    margin: 80px auto;
   }
 
   p{
@@ -357,17 +402,27 @@ input{
 
   padding-bottom: 22rem;
 
+  @media only screen and (max-width: 1000px){
+   padding-bottom: 6rem;
+  }
+
 
 
   h2{
     margin-top: 22rem;
     margin-bottom: 12rem;
     text-align: center;
+    @media only screen and (max-width: 1000px){
+      margin-bottom: 6rem;
+    }
   }
   form{
     & > div{
       display: flex;
       justify-content: center;
+      @media only screen and (max-width: 1100px){
+        flex-direction: column;
+      }
     }
     .email{
       position: relative;
@@ -383,6 +438,13 @@ input{
       color: $txt-grey;
       margin-bottom: 4rem;
 
+      @media only screen and (max-width: 1100px){
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+      }
+
     }
     .email::placeholder{
       font-weight: $fw-Regular;
@@ -393,14 +455,32 @@ input{
     .newslatter-btn{
       position: relative;
       right: 2rem;
+      @media only screen and (max-width: 1100px){
+        margin: 3rem auto;
+      }
+    }
+
+    label{
+      @media only screen and (max-width: 1100px){
+        position: absolute;
+        left: 48%;
+        margin-bottom: 1rem;
+      }
+
     }
     .rgpd-check{
       display: flex;
       justify-content: center;
       column-gap: 2rem;
       margin-top: 2rem;
+
+      @media only screen and (max-width: 1100px){
+        margin: 3rem auto;
+        max-width: 80%;
+      }
     }
   }
+
 
   p{
     font-weight: $fw-Regular;
@@ -429,6 +509,7 @@ input{
     background: rgba(34,50,84,0.03);
     opacity: 0;
     transition: opacity 0.2s ease;
+
   }
   .check svg {
     position: relative;
@@ -479,6 +560,11 @@ input{
   padding-top: 30px;
   position: relative;
   background-color: $darkBlue;
+
+  @media only screen and (max-width: 1100px){
+    display: none;
+  }
+
 }
 
 h2 {
@@ -649,16 +735,42 @@ h2 {
 footer{
   height: 320px;
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
   background-color: $darkBlue;
-  align-items: center;
   padding: 0 100px;
   box-sizing: border-box;
+
+  @media only screen and (max-width: 1500px){
+    padding: 0;
+  }
+
+
+  .footer-wrapper{
+    height: 180px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: $darkBlue;
+    align-items: end;
+    padding: 0 100px;
+    box-sizing: border-box;
+
+    @media only screen and (max-width: 1500px){
+      padding: 0 2rem;
+    }
+    @media only screen and (max-width: 1000px){
+      padding: 0 2rem;
+      flex-direction: column;
+      justify-items: center;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 
   img{
     width: 144px;
     height: 64px;
+    position: relative;
+    top: 20px;
   }
 
   .footer-links{
@@ -669,6 +781,9 @@ footer{
     display: flex;
     margin-right: auto;
     margin-left: auto;
+    @media only screen and (max-width: 1000px){
+      display: none;
+    }
 
     a{
       font-size: 3rem;
@@ -685,6 +800,9 @@ footer{
   .social-network{
     display: flex;
     column-gap: 2rem;
+    position: relative;
+    top: 40px;
+    margin-bottom: 6rem;
     align-items: end;
     img{
       height: 42px;
@@ -694,8 +812,25 @@ footer{
   .contact{
     & > p{
       text-align: center;
-      margin-top: 3rem;
+      font-size: 3rem;
+      position: relative;
+      top: 40px;
+      @media only screen and (max-width: 1000px){
+        top: 8rem;
+      }
+    }
+  }
 
+  .copyright{
+    display: block;
+    text-align: center;
+    margin : 0px auto;
+    margin-top:  100px;
+    font-size: 2rem;
+    a{
+      font-size: 2rem;
+      color: $white;
+      text-decoration: underline;
     }
   }
 

@@ -124,3 +124,27 @@ exampleCarousel.setControls();
 exampleCarousel.setNav();
 exampleCarousel.setInitialState();
 exampleCarousel.useControls();
+
+
+let toggleMenuBtn = document.querySelector('#toggleMenuBtn');
+let menuItems = document.querySelector('#menu-nav-link');
+let connecteBtn = document.querySelector('#menu-connecte-btn');
+
+let menuOpen = false
+var click = 2;
+
+toggleMenuBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+        if(! menuOpen){
+            menuItems.classList.add("nav-element-translate-in")
+            connecteBtn.classList.add("nav-element-translate-in")
+            document.querySelector('nav').classList.add("nav-translate-in")
+            menuOpen = true;
+        }else{
+            menuItems.classList.remove("nav-element-translate-in")
+            connecteBtn.classList.remove("nav-element-translate-in")
+            document.querySelector('nav').classList.remove("nav-translate-in")
+            menuOpen = false;
+        }
+
+});

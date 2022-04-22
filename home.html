@@ -20,12 +20,41 @@
 <!--navbar -->
 <nav class="navbar">
     <img src="./assets/logo/LOGO.png" alt="logo de yalow">
-    <div class="nav-links">
+
+<!--    responsive toggle btn-->
+    <div id="toggleMenuBtn">
+        <label class="toggle" >
+            <input type="checkbox">
+            <div>
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+                <svg>
+                    <use xlink:href="#path">
+                </svg>
+                <svg>
+                    <use xlink:href="#path">
+                </svg>
+            </div>
+        </label>
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+                <path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+            </symbol>
+        </svg>
+    </div>
+
+
+    <!--    responsive toggle btn end-->
+
+    <div class="nav-links" id="menu-nav-link">
         <a href="" class="active">Accueil</a>
         <a href="">Blog</a>
         <a href="">Contact</a>
     </div>
-    <div class="button button-connecte">
+    <div class="button button-connecte" id="menu-connecte-btn">
         <p>Connexion</p>
     </div>
 
@@ -56,7 +85,7 @@
 
 </header>
 
-<!--    about-->
+<!--  about  -->
 <section class="about">
     <div class="about-content">
         <img src="assets/graphics/thinkingMan.png" alt="a very nice illustration">
@@ -176,22 +205,26 @@
 
 
 <footer>
-    <img src="./assets/logo/LOGO.png" alt="logo de yalow">
-    <div class="footer-links">
-        <a href="" class="active">Accueil</a>
-        <a href="">Blog</a>
-        <a href="">Contact</a>
-    </div>
-    <div class="contact">
-        <div class="social-network">
-            <a href="#"><img src="assets/graphics/social-networks/facebook.png" alt="yalow facebook account facebook link"></a>
-            <a href="#"><img src="assets/graphics/social-networks/instagram.png" alt="yalow instagram account link"></a>
-            <a href="#"><img src="assets/graphics/social-networks/linkedin.png" alt="yalow linkedin account link"></a>
-            <a href="#"><img src="assets/graphics/social-networks/twitter.png" alt="yalow twitter account link"></a>
+    <div class="footer-wrapper">
+        <img src="./assets/logo/LOGO.png" alt="logo de yalow">
+        <div class="footer-links">
+            <a href="" class="active">Accueil</a>
+            <a href="">Blog</a>
+            <a href="">Contact</a>
         </div>
-        <p>06 33 55 33 94</p>
+        <div class="contact">
+            <div class="social-network">
+                <a href="#"><img src="assets/graphics/social-networks/facebook.png" alt="yalow facebook account facebook link"></a>
+                <a href="#"><img src="assets/graphics/social-networks/instagram.png" alt="yalow instagram account link"></a>
+                <a href="#"><img src="assets/graphics/social-networks/linkedin.png" alt="yalow linkedin account link"></a>
+                <a href="#"><img src="assets/graphics/social-networks/twitter.png" alt="yalow twitter account link"></a>
+            </div>
+            <p>06 33 55 33 94</p>
+        </div>
+
     </div>
 
+    <p class="copyright">Copyright 2022 - <a href="#">Mentions légales</a></p>
 </footer>
 
 <!--subscribe to newslater end -->
